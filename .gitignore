@@ -1,0 +1,10 @@
+# Raw source data from the trainer (large, not ours to publish)
+*.zip
+raw/
+data/
+
+# System and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
