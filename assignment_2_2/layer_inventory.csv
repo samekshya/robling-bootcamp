@@ -1,0 +1,51 @@
+object,layer,format,partitioning,load_pattern,source,purpose
+brz_xstore_sa_tran_item,Bronze,PSV (header + trailer),system + file,full,pos_xstore/SA_TRAN_ITEM_20260801_20261103.psv,Gold
+brz_ncr_sales_journal_2025,Bronze,CSV (utf-8-sig),system + file,full,pos_ncr/NCR_SALES_JOURNAL_20250801_20251103.csv,Gold
+brz_ncr_sales_journal_2026,Bronze,CSV (utf-8-sig),system + file,full,pos_ncr/NCR_SALES_JOURNAL_20260801_20261103.csv,Gold
+brz_oms_web_order_lines,Bronze,CSV,system + file,full,oms/WEB_ORDER_LINES_20250801_20261103.csv,Gold
+brz_rms_soh_full,Bronze,CSV,snapshot date,delta,rms/soh_full/ITEM_LOC_SOH_FULL_*.csv (30 files),Gold
+brz_rms_tran_data,Bronze,CSV,month,delta,rms/tran_data/TRAN_DATA_*.csv (8 files),check
+brz_rms_chain,Bronze,CSV,none,full,rms/CHAIN.csv,check
+brz_rms_area,Bronze,CSV,none,full,rms/AREA.csv,Gold
+brz_rms_region,Bronze,CSV,none,full,rms/REGION.csv,Gold
+brz_rms_district,Bronze,CSV,none,full,rms/DISTRICT.csv,Gold
+brz_rms_store,Bronze,CSV,none,full,rms/STORE.csv,Gold
+brz_rms_wh,Bronze,CSV,none,full,rms/WH.csv,Gold
+brz_rms_store_district_move,Bronze,CSV,none,full,rms/STORE_DISTRICT_MOVE.csv,Gold
+brz_store_ops_location_roster,Bronze,CSV (cp1252),none,full,store_ops/LOCATION_ROSTER.csv,check
+brz_rms_deps,Bronze,CSV,none,full,rms/DEPS.csv,Gold
+brz_rms_class,Bronze,CSV,none,full,rms/CLASS.csv,check
+brz_rms_subclass,Bronze,CSV,none,full,rms/SUBCLASS.csv,Gold
+brz_rms_item_master,Bronze,CSV,none,full,rms/ITEM_MASTER.csv,Gold
+brz_rms_item_master_hist,Bronze,CSV,none,delta,rms/ITEM_MASTER_HIST.csv,Gold
+brz_rms_item_upc,Bronze,CSV,none,full,rms/ITEM_UPC.csv,Gold
+brz_rms_packitem,Bronze,CSV,none,full,rms/PACKITEM.csv,check
+brz_rpm_price_zone_loc,Bronze,CSV,none,full,rpm/PRICE_ZONE_LOC.csv,Gold
+brz_rpm_price_events,Bronze,CSV,none,full,rpm/PRICE_EVENTS.csv,Gold
+brz_fin_fiscal_calendar_seed,Bronze,CSV,none,seed,finance/FISCAL_CALENDAR_SEED.csv,Gold
+slv_sales_line,Silver,table,clustered by business date,delta,brz_xstore_sa_tran_item + brz_ncr_sales_journal_2025 + brz_ncr_sales_journal_2026 + brz_oms_web_order_lines,FCT_SALES
+slv_inventory_position,Silver,table,clustered by snapshot date,delta,brz_rms_soh_full,FCT_INVENTORY
+slv_price,Silver,table,none,full,brz_rpm_price_events + brz_rpm_price_zone_loc,FCT_PRICE
+slv_item,Silver,table,none,full,brz_rms_item_master + brz_rms_item_master_hist,DIM_ITEM
+slv_item_upc,Silver,table,none,full,brz_rms_item_upc,lookup for slv_sales_line
+slv_merch_hierarchy,Silver,table,none,full,brz_rms_deps + brz_rms_subclass,DIM_CATG + DIM_SUBCATG
+slv_org_hierarchy,Silver,table,none,full,brz_rms_area + brz_rms_region + brz_rms_district,DIM_AREA + DIM_REGN + DIM_DISTRICT
+slv_location,Silver,table,none,full,brz_rms_store + brz_rms_wh + brz_rms_store_district_move,DIM_LOCN
+slv_fiscal_day,Silver,table,none,seed,brz_fin_fiscal_calendar_seed,DIM_YEAR + DIM_MONTH + DIM_WEEK + DIM_DAY
+rej_row,Silver,table,clustered by load date,delta,all Bronze tables,quarantine (not loaded to Gold)
+DIM_CATG,Gold,table,none,full,slv_merch_hierarchy,product hierarchy (SCD1)
+DIM_SUBCATG,Gold,table,none,full,slv_merch_hierarchy,product hierarchy (SCD1)
+DIM_ITEM,Gold,table,none,delta,slv_item,product hierarchy (SCD2)
+DIM_AREA,Gold,table,none,full,slv_org_hierarchy,location hierarchy (SCD1)
+DIM_REGN,Gold,table,none,full,slv_org_hierarchy,location hierarchy (SCD1)
+DIM_DISTRICT,Gold,table,none,full,slv_org_hierarchy,location hierarchy (SCD1)
+DIM_LOCN,Gold,table,none,delta,slv_location,location hierarchy (SCD2)
+DIM_YEAR,Gold,table,none,seed,slv_fiscal_day,fiscal calendar
+DIM_MONTH,Gold,table,none,seed,slv_fiscal_day,fiscal calendar
+DIM_WEEK,Gold,table,none,seed,slv_fiscal_day,fiscal calendar
+DIM_DAY,Gold,table,none,seed,slv_fiscal_day,fiscal calendar
+DIM_CUSTOMER,Gold,table,none,seed,reserved Unknown row (no source feed),customer
+FCT_SALES,Gold,table,clustered by DAY_KY,delta,slv_sales_line,transaction fact
+FCT_INVENTORY,Gold,table,clustered by EFF_START_DT,delta,slv_inventory_position,positional fact
+FCT_PRICE,Gold,table,clustered by EFF_START_DT,delta,slv_price,positional fact
+AGG_SALES_MONTH_SUBCATG_DISTRICT,Marts,table,none,full rebuild,FCT_SALES + DIM_DAY + DIM_ITEM + DIM_LOCN,reports and BI
