@@ -1,0 +1,13 @@
+store_id,store_name,store_type,district_id,district_name,region_id,region_name,area_id,area_name,country,city,currency_code,open_date,close_date
+1101,Northline Hartford #1101,S,101,Northeast D1,11,Northeast,1,East,US,Hartford,USD,20191022,
+1102,Northline Albany #1102,S,101,Northeast D1,11,Northeast,1,East,US,Albany,USD,20201123,
+1104,Northline Boston #1104,S,102,Northeast D2,11,Northeast,1,East,US,Boston,USD,20140125,
+1105,Northline Providence #1105,S,102,Northeast D2,11,Northeast,1,East,US,Providence,USD,20150226,
+1107,Northline Savannah  #1107,S,103,Southeast D1,12,Southeast,1,East,US,Savannah,USD,20170401,
+1109,Northline Savannah #1109,S,103,Southeast D1,12,Southeast,1,East,US,Savannah,US$,20190603,
+1112,Northline Jacksonville  #1112,S,104,Southeast D2,12,Southeast,1,East,US,Jacksonville,US$,20140906,
+1116,Northline Chicago #1116,S,106,Great Lakes D2,21,Great Lakes,2,Central,US,Chicago,USD,20180110,
+1121,Northline Minneapolis #1121,S,107,Plains D1,22,Plains,2,Central,US,Minneapolis,US$,20150615,
+1125,Northline Salt Lake City #1125,S,109,Rockies D1,31,Rockies,3,West,US,Salt Lake City,US$,20191019,
+1131,Northline Fresno #1131,S,111,Pacific D1,32,Pacific,3,West,US,Fresno,USD,20170425,
+1137,Northline Ottawa #1137,S,113,Ontario D1,41,Ontario,4,Canada,CA,Ottawa,CAD,20151004,

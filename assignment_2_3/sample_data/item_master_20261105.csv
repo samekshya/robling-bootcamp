@@ -1,0 +1,42 @@
+item_id,item_name,brand_name,subclass_id,subclass_name,dept_id,dept_name,unit_cost,unit_retail,status
+10000641,Yardline Pro Pest,Yardline,10032,Pest,100,Lawn & Garden,110.67,169.63,A
+10000640,Yardline Trail Fertilizer,Yardline,10031,Fertilizer,100,Lawn & Garden,119.40,308.79,A
+10000625,Northline Heritage Shrub,Northline,10012,Shrubs,100,Lawn & Garden,31.98,51.27,A
+10000631,Northline Barn Hand Tool,Northline,10021,Hand Tools,100,Lawn & Garden,126.83,267.97,A
+10000621,Northline Barn Annual,Northline,10011,Annuals,100,Lawn & Garden,16.98,41.01,A
+10000648,  Northline Lite Oil ,Northline,11011,Oil,110,Automotive,105.39,193.00,A
+10000666,Iron Acre Summit Lawn,Iron Acre,11032,Lawn,110,Automotive,47.58,75.71,A
+10000649,Yardline Summit Coolant,Yardline,11012,Coolant,110,Automotive,24.56,45.84,A
+10000652,Trailmark Trail Coolant,Trailmark,11012,Coolant,110,Automotive,58.82,87.63,A
+10000659,Trailmark Barn Light,Trailmark,11022,Lights,110,Automotive,67.67,139.53,A
+10000672,Daily Barn Heavy Dog Large,Daily Barn,12011,Dog,120,Pets,5.04,9.61,A
+10000682,Northline Classic Treat Spicy,Northline,12022,Treats,120,Pets,47.10,75.27,A
+10000669,Clear Creek Pro Dog Unscented,Clear Creek,12011,Dog,120,Pets,43.23,71.36,A
+10000684,Clear Creek Trail Treat Unscented,Clear Creek,12022,Treats,120,Pets,11.59,19.43,A
+10000679,Northline Heavy Litter Spicy,Northline,12021,Litter,120,Pets,40.01,72.23,A
+10000686,Trailmark Pro Cattle,Trailmark,13011,Cattle,130,Farm & Ranch,28.43,49.05,A
+10000692,Northline Trail Poultry,Northline,13012,Poultry,130,Farm & Ranch,7.04,15.95,A
+10000699,Trailmark Trail Wire,Trailmark,13021,Wire,130,Farm & Ranch,88.20,152.30,A
+10000701,Trailmark Lite Post,Trailmark,13022,Posts,130,Farm & Ranch,14.49,26.04,A
+10000688,Iron Acre Daily Cattle,Iron Acre,13011,Cattle,130,Farm & Ranch,65.34,129.57,A
+10000722,Yardline Pro Supplies,Yardline,14021,SUPPLIES,140,Seasonal,61.72,99.75,A
+10000719,Trailmark Summit Decor,Trailmark,14012,Decor,140,Seasonal,117.64,258.17,A
+10000726,Trailmark Trail Lunch,Trailmark,14022,Lunch,140,Seasonal,91.14,174.40,A
+10000716,Trailmark Classic Costume,Trailmark,14011,Costumes,140,Seasonal,50.99,117.80,A
+10000729,Yardline Barn Trim,Yardline,14031,Trim,140,Seasonal,58.60,94.96,A
+10000114,Harbor & Co Barn Denim Olive Sz L,Harbor & Co,2031,DENIM,20,Mens Apparel,40.14,91.52,A
+10000100,  Metro Line Heavy Flannel Olive Sz XS ,Metro Line,2022,FLANNELS,20,Mens Apparel,32.03,51.93,A
+10000061,Harbor & Co Heavy Dress Shirt Navy Sz XXL,Harbor & Co,2021,Dress Shirts,20,Mens Apparel,42.88,81.52,A
+10000020,Red Barn Daily Tee White Sz XL,Red Barn,2012,Polos,20,Mens Apparel,35.69,78.19,A
+10000094,Red Barn Barn Flannel Khaki Sz M,Red Barn,2022,Flannels,20,Mens Apparel,6.08,11.28,A
+10000285,Red Barn Heavy Legging Red Sz XS,Red Barn,3032,LEGGINGS,30,Womens Apparel,9.88,25.06,A
+10000269,Metro Line Heritage Denim Navy Sz S,Metro Line,3031,Denim,30,Womens Apparel,3.16,7.86,A
+10000221,Harbor & Co Heritage Casual Grey Sz S,Harbor & Co,3021,CASUAL,30,Womens Apparel,2.52,5.29,A
+10000263,  Fieldwork Barn Denim Blue Sz XXL ,Fieldwork,3031,Denim,30,Womens Apparel,25.43,42.54,A
+10000280,Red Barn Summit Denim Olive Sz L,Red Barn,3031,Denim,30,Womens Apparel,45.14,105.58,A
+10000404,Harbor & Co Barn Short White Sz XL,Harbor & Co,4022,Shorts,40,Kids Apparel,16.39,24.59,A
+10000378,Red Barn Lite Sweatshirt Black Sz XS,Red Barn,4012,Sweatshirts,40,Kids Apparel,45.01,96.95,A
+10000402,Harbor & Co Barn Short Red Sz XXL,Harbor & Co,4022,Shorts,40,Kids Apparel,34.72,79.99,A
+10000359,Fieldwork Daily Tee Blue Sz XL,Fieldwork,4011,Tees,40,Kids Apparel,9.05,14.82,A
+10000383,Metro Line Heavy Jean Black Sz XL,Metro Line,4021,Jeans,40,Kids Apparel,19.92,44.68,A
+10000901,Red Barn Daily Polo Green Sz M,Red Barn,2012,Polos,20,Mens Apparel,14.20,29.99,A
