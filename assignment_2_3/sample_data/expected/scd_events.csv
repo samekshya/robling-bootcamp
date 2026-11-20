@@ -1,0 +1,5 @@
+business_date,table,business_key,change,expected_handling
+2026-11-02,DIM_ITEM,10000722,item_name 'Yardline Pro Supplie' -> 'Yardline Pro Supplies',"SCD1: name updated in place, no new version"
+2026-11-03,DIM_LOCN,1112,district 104 (Southeast D2) -> 108 (Plains D2),"SCD2: version ends 2026-11-02, new version from 2026-11-03"
+2026-11-04,DIM_ITEM,10000020,subclass 2011 Tees -> 2012 Polos,"SCD2: version ends 2026-11-03, new version from 2026-11-04"
+2026-11-05,DIM_ITEM,10000901,new item,New DIM_ITEM row from 2026-11-05

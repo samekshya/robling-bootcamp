@@ -16,7 +16,7 @@ INSERT INTO SILVER.AUD_RECONCILIATION
 WITH
 src_sales AS (   -- the pos_sales file
     SELECT COUNT(*) AS ROW_CNT,
-                SUM(COALESCE(TRY_TO_NUMBER(TRIM(NET_AMOUNT), 14, 2), 0)) AS NET_AMT
+            COALESCE(SUM(TRY_TO_NUMBER(TRIM(NET_AMOUNT), 14, 2)), 0) AS NET_AMT
     FROM BRONZE.BRZ_POS_SALES WHERE _BUSINESS_DATE = TO_DATE('{{ ds }}')
 ),
 rej_sales AS (   -- quarantined sales rows
