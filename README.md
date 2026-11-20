@@ -1,4 +1,4 @@
-# Retail ETL: Assignment 2.3 (Ycotek Data Engineering, Module 2)
+# Retail ETL: Assignment 2.3 (Module 2)
 
 Airflow pipeline that loads five days of Northline retail source files into Snowflake through Bronze, Silver and Gold layers. Dimensions use SCD2 and SCD1, bad rows are quarantined with a reason code, and a reconcile task fails the run if Gold does not tie back to the source files.
 
